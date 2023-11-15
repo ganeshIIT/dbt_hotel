@@ -1,0 +1,33 @@
+dbt_training:
+  outputs:
+    dev:
+      account: [account_url]
+      database: [database]
+      password: [password]
+      role: [role]
+      schema: dbt_mkahan
+      threads: 4
+      type: snowflake
+      user: [username]
+      warehouse: [warehouse]
+    ci:
+      account: [account_url]
+      database: [database]
+      password: [password]
+      role: [role]
+      schema: dbt_ci
+      threads: 4
+      type: snowflake
+      user: [username]
+      warehouse: [warehouse]
+    prod:
+      account: [account_url]
+      database: [database]
+      password: [password]
+      role: [role] # Should be a dedicated role
+      schema: dbt_prod # May or may not be used (depending on macro)
+      threads: 5
+      type: snowflake
+      user: [username] # Should be a dedicated user
+      warehouse: [warehouse]
+  target: dev

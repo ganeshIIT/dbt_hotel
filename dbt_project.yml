@@ -33,5 +33,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_hotel:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    common:
+      +materialized: table
+    staging:
+      +materialized: view
+    history:
+      +materialized: table
+    analytics:
+      +materialized: table
+    reports:
       +materialized: view
