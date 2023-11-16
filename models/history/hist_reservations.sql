@@ -16,6 +16,5 @@ select * from reservations
 {% if is_incremental() %}
 
   where updated > (select max(updated) from {{ this }})
-  or updated < (select min(updated) from {{ this }})
 
 {% endif %}
