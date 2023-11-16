@@ -15,11 +15,10 @@ customers as (
 
 hashed as (
     select
-            {{ dbt_utils.generate_surrogate_key(["customerid"]) }} as position_hkey,
+            {{ dbt_utils.generate_surrogate_key(["customerid"]) }} as customer_hkey,
             {{
                 dbt_utils.generate_surrogate_key(
                     [
-                        "customerid",
                         "firstname",
                         "lastname",
                         "gender",
@@ -30,9 +29,8 @@ hashed as (
                         "updated",
                     ]
                 )
-            }} as position_hdiff,
-            *,
-            '{{ run_started_at }}' as load_ts_utc
+            }} as customer_hdiff,
+            *
 from customers
 )
 
