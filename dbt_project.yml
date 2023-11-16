@@ -50,3 +50,7 @@ models:
     reports:
       +materialized: view
       +schema: reports
+
+snapshots:
+  dbt_hotel:
+    +target_schema: SNAPSHOTS

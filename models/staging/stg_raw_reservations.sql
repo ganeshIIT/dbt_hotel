@@ -14,11 +14,10 @@ reservations as (
 
 hashed as (
     select
-            {{ dbt_utils.generate_surrogate_key(["RESERVATIONID"]) }} as position_hkey,
+            {{ dbt_utils.generate_surrogate_key(["RESERVATIONID"]) }} as reservation_hkey,
             {{
                 dbt_utils.generate_surrogate_key(
                     [
-                        "RESERVATIONID",
                         "CUSTOMERID",
                         "DATEBOOKED",
                         "NIGHTSCHARGED",
@@ -28,9 +27,8 @@ hashed as (
                         "updated",
                     ]
                 )
-            }} as position_hdiff,
-            *,
-            '{{ run_started_at }}' as load_ts_utc
+            }} as reservation_hdiff,
+            *
 from reservations
 )
 
