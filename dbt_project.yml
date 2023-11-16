@@ -50,8 +50,7 @@ models:
     reports:
       +materialized: view
       +schema: reports
-    dbt_artifacts:
-      +schema: audit
+
 
 snapshots:
   dbt_hotel:
