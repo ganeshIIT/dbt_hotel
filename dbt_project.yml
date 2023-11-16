@@ -50,6 +50,8 @@ models:
     reports:
       +materialized: view
       +schema: reports
+    elementary:
+      +schema: "audit"
 
 
 snapshots:
