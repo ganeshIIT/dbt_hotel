@@ -50,8 +50,8 @@ models:
     reports:
       +materialized: view
       +schema: reports
-    elementary:
-      +schema: "audit"
+    # elementary:
+    #   +schema: "audit"
 
 
 snapshots:
@@ -59,5 +59,5 @@ snapshots:
     +target_schema: SNAPSHOTS
 
 
-on-run-end:
-  - "{{ dbt_artifacts.upload_results(results) }}"
+# on-run-end:
+#   - "{{ dbt_artifacts.upload_results(results) }}"
