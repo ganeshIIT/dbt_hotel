@@ -1,0 +1,113 @@
+version: 2
+
+models:
+  - name: calendar
+    description: ""
+    columns:
+      - name: date_day
+        data_type: date
+        description: ""
+
+      - name: year
+        data_type: number
+        description: ""
+
+      - name: month
+        data_type: number
+        description: ""
+
+      - name: monthname
+        data_type: varchar
+        description: ""
+
+      - name: day
+        data_type: number
+        description: ""
+
+      - name: dayname
+        data_type: varchar
+        description: ""
+
+      - name: quarter
+        data_type: number
+        description: ""
+
+      - name: week
+        data_type: number
+        description: ""
+
+      - name: dayofmonth
+        data_type: number
+        description: ""
+
+      - name: dayofweek
+        data_type: number
+        description: ""
+
+      - name: dayofyear
+        data_type: number
+        description: ""
+
+      - name: last_day_of_month
+        data_type: date
+        description: ""
+
+      - name: last_day_of_quarter
+        data_type: date
+        description: ""
+
+      - name: last_day_of_year
+        data_type: date
+        description: ""
+
+      - name: last_day_of_week
+        data_type: date
+        description: ""
+
+      - name: weekofyear
+        data_type: number
+        description: ""
+
+      - name: yearofweek
+        data_type: number
+        description: ""
+
+      - name: yearofweekiso
+        data_type: number
+        description: ""
+
+      - name: weekiso
+        data_type: number
+        description: ""
+
+      - name: dayofweekiso
+        data_type: number
+        description: ""
+
+      - name: week_of_month
+        data_type: number
+        description: ""
+
+      - name: first_day_of_quarter
+        data_type: date
+        description: ""
+
+      - name: day_of_quarter
+        data_type: number
+        description: ""
+
+      - name: days_in_quarter
+        data_type: number
+        description: ""
+
+      - name: week_of_quarter
+        data_type: number
+        description: ""
+
+      - name: dbt_batch_id
+        data_type: varchar
+        description: ""
+
+      - name: dbt_batch_utc
+        data_type: timestamp_ntz
+        description: ""

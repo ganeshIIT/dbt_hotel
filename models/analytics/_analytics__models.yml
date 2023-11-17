@@ -2,4 +2,119 @@ version: 2
 
 models:
   - name: v_customer_latest
+    description: ""
+    columns:
+      - name: customer_hkey
+        data_type: varchar
+        description: ""
+
+      - name: customer_hdiff
+        data_type: varchar
+        description: ""
+
+      - name: customerid
+        data_type: varchar
+        description: ""
+
+      - name: firstname
+        data_type: varchar
+        description: ""
+
+      - name: lastname
+        data_type: varchar
+        description: ""
+
+      - name: gender
+        data_type: varchar
+        description: ""
+
+      - name: country
+        data_type: varchar
+        description: ""
+
+      - name: city
+        data_type: varchar
+        description: ""
+
+      - name: zipcode
+        data_type: varchar
+        description: ""
+
+      - name: dateofbirth
+        data_type: date
+        description: ""
+
+      - name: updated
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dbt_updated_at
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: from_date
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: to_date
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dbt_batch_id
+        data_type: varchar
+        description: ""
+
+      - name: dbt_batch_utc
+        data_type: timestamp_ntz
+        description: ""
+
   - name: v_reservation_latest
+    description: ""
+    columns:
+      - name: reservation_hkey
+        data_type: varchar
+        description: ""
+
+      - name: reservation_hdiff
+        data_type: varchar
+        description: ""
+
+      - name: reservationid
+        data_type: varchar
+        description: ""
+
+      - name: customerid
+        data_type: varchar
+        description: ""
+
+      - name: datebooked
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: nightscharged
+        data_type: number
+        description: ""
+
+      - name: stayfrom
+        data_type: date
+        description: ""
+
+      - name: stayto
+        data_type: date
+        description: ""
+
+      - name: status
+        data_type: varchar
+        description: ""
+
+      - name: updated
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dbt_batch_id
+        data_type: varchar
+        description: ""
+
+      - name: dbt_batch_utc
+        data_type: timestamp_ntz
+        description: ""
