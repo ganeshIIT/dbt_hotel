@@ -2,4 +2,95 @@ version: 2
 
 models:
   - name: stg_raw_customers
-  - name: stg_raw_reservations
+    description: ""
+    columns:
+      - name: customer_hkey
+        data_type: varchar
+        description: ""
+
+      - name: customer_hdiff
+        data_type: varchar
+        description: ""
+
+      - name: customerid
+        data_type: varchar
+        description: ""
+
+      - name: firstname
+        data_type: varchar
+        description: ""
+
+      - name: lastname
+        data_type: varchar
+        description: ""
+
+      - name: gender
+        data_type: varchar
+        description: ""
+
+      - name: country
+        data_type: varchar
+        description: ""
+
+      - name: city
+        data_type: varchar
+        description: ""
+
+      - name: zipcode
+        data_type: varchar
+        description: ""
+
+      - name: dateofbirth
+        data_type: date
+        description: ""
+
+      - name: updated
+        data_type: timestamp_ntz
+        description: ""
+
+  - name: stg_raw_customers
+    description: ""
+    columns:
+      - name: customer_hkey
+        data_type: varchar
+        description: ""
+
+      - name: customer_hdiff
+        data_type: varchar
+        description: ""
+
+      - name: customerid
+        data_type: varchar
+        description: ""
+
+      - name: firstname
+        data_type: varchar
+        description: ""
+
+      - name: lastname
+        data_type: varchar
+        description: ""
+
+      - name: gender
+        data_type: varchar
+        description: ""
+
+      - name: country
+        data_type: varchar
+        description: ""
+
+      - name: city
+        data_type: varchar
+        description: ""
+
+      - name: zipcode
+        data_type: varchar
+        description: ""
+
+      - name: dateofbirth
+        data_type: date
+        description: ""
+
+      - name: updated
+        data_type: timestamp_ntz
+        description: ""

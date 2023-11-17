@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='view'
+    )
+}}
+
 with
 
 customers as (
@@ -33,7 +39,6 @@ obt as (
         r.reservation_hkey,
         r.reservation_hdiff,
         r.reservationid,
-        r.customerid,
         r.datebooked,
         r.nightscharged,
         r.stayfrom,
