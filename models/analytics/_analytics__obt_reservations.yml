@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: hist_customers
+  - name: obt_reservations
     description: ""
     columns:
       - name: customer_hkey
@@ -44,10 +44,6 @@ models:
         data_type: date
         description: ""
 
-      - name: updated
-        data_type: timestamp_ntz
-        description: ""
-
       - name: dbt_updated_at
         data_type: timestamp_ntz
         description: ""
@@ -60,17 +56,6 @@ models:
         data_type: timestamp_ntz
         description: ""
 
-      - name: dbt_batch_id
-        data_type: varchar
-        description: ""
-
-      - name: dbt_batch_utc
-        data_type: timestamp_ntz
-        description: ""
-
-  - name: hist_reservations
-    description: ""
-    columns:
       - name: reservation_hkey
         data_type: varchar
         description: ""
@@ -80,10 +65,6 @@ models:
         description: ""
 
       - name: reservationid
-        data_type: varchar
-        description: ""
-
-      - name: customerid
         data_type: varchar
         description: ""
 
@@ -111,10 +92,54 @@ models:
         data_type: timestamp_ntz
         description: ""
 
-      - name: dbt_batch_id
+      - name: booked_year
+        data_type: number
+        description: ""
+
+      - name: booked_month
+        data_type: number
+        description: ""
+
+      - name: booked_monthname
         data_type: varchar
         description: ""
 
-      - name: dbt_batch_utc
-        data_type: timestamp_ntz
+      - name: booked_day
+        data_type: number
+        description: ""
+
+      - name: booked_dayname
+        data_type: varchar
+        description: ""
+
+      - name: booked_quarter
+        data_type: number
+        description: ""
+
+      - name: booked_week
+        data_type: number
+        description: ""
+
+      - name: booked_dayofmonth
+        data_type: number
+        description: ""
+
+      - name: booked_dayofweek
+        data_type: number
+        description: ""
+
+      - name: booked_dayofyear
+        data_type: number
+        description: ""
+
+      - name: booked_weekofyear
+        data_type: number
+        description: ""
+
+      - name: booked_week_of_month
+        data_type: number
+        description: ""
+
+      - name: booked_week_of_quarter
+        data_type: number
         description: ""

@@ -8,7 +8,7 @@ select
     customerid,
     firstname,
     lastname,
-    gender,
+    gender, 
     country,
     city,
     zipcode,

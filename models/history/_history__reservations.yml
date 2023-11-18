@@ -1,0 +1,54 @@
+version: 2
+
+models:
+
+  - name: hist_reservations
+    description: ""
+    columns:
+      - name: reservation_hkey
+        data_type: varchar
+        description: ""
+
+      - name: reservation_hdiff
+        data_type: varchar
+        description: ""
+
+      - name: reservationid
+        data_type: varchar
+        description: ""
+
+      - name: customerid
+        data_type: varchar
+        description: ""
+
+      - name: datebooked
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: nightscharged
+        data_type: number
+        description: ""
+
+      - name: stayfrom
+        data_type: date
+        description: ""
+
+      - name: stayto
+        data_type: date
+        description: ""
+
+      - name: status
+        data_type: varchar
+        description: ""
+
+      - name: updated
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: dbt_batch_id
+        data_type: varchar
+        description: ""
+
+      - name: dbt_batch_utc
+        data_type: timestamp_ntz
+        description: ""
