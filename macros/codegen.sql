@@ -1,7 +1,7 @@
 
 
 {{ codegen.generate_model_yaml(
-    model_names=['stg_raw_reservations']
+    model_names=['obt_reservations']
 ) }}
 
 

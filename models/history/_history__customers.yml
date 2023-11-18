@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_raw_customers
+  - name: hist_customers
     description: ""
     columns:
       - name: customer_hkey
@@ -48,46 +48,23 @@ models:
         data_type: timestamp_ntz
         description: ""
 
-
-  - name: stg_raw_reservations
-    description: ""
-    columns:
-      - name: reservation_hkey
-        data_type: varchar
-        description: ""
-
-      - name: reservation_hdiff
-        data_type: varchar
-        description: ""
-
-      - name: reservationid
-        data_type: varchar
-        description: ""
-
-      - name: customerid
-        data_type: varchar
-        description: ""
-
-      - name: datebooked
+      - name: dbt_updated_at
         data_type: timestamp_ntz
         description: ""
 
-      - name: nightscharged
-        data_type: number
+      - name: from_date
+        data_type: timestamp_ntz
         description: ""
 
-      - name: stayfrom
-        data_type: date
+      - name: to_date
+        data_type: timestamp_ntz
         description: ""
 
-      - name: stayto
-        data_type: date
-        description: ""
-
-      - name: status
+      - name: dbt_batch_id
         data_type: varchar
         description: ""
 
-      - name: updated
+      - name: dbt_batch_utc
         data_type: timestamp_ntz
         description: ""
+
