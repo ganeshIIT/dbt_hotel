@@ -1,7 +1,7 @@
 
 
 {{ codegen.generate_model_yaml(
-    model_names=['calendar']
+    model_names=['stg_raw_reservations']
 ) }}
 
 

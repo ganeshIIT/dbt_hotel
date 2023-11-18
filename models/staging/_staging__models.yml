@@ -48,14 +48,19 @@ models:
         data_type: timestamp_ntz
         description: ""
 
-  - name: stg_raw_customers
+
+  - name: stg_raw_reservations
     description: ""
     columns:
-      - name: customer_hkey
+      - name: reservation_hkey
         data_type: varchar
         description: ""
 
-      - name: customer_hdiff
+      - name: reservation_hdiff
+        data_type: varchar
+        description: ""
+
+      - name: reservationid
         data_type: varchar
         description: ""
 
@@ -63,32 +68,24 @@ models:
         data_type: varchar
         description: ""
 
-      - name: firstname
-        data_type: varchar
+      - name: datebooked
+        data_type: timestamp_ntz
         description: ""
 
-      - name: lastname
-        data_type: varchar
+      - name: nightscharged
+        data_type: number
         description: ""
 
-      - name: gender
-        data_type: varchar
-        description: ""
-
-      - name: country
-        data_type: varchar
-        description: ""
-
-      - name: city
-        data_type: varchar
-        description: ""
-
-      - name: zipcode
-        data_type: varchar
-        description: ""
-
-      - name: dateofbirth
+      - name: stayfrom
         data_type: date
+        description: ""
+
+      - name: stayto
+        data_type: date
+        description: ""
+
+      - name: status
+        data_type: varchar
         description: ""
 
       - name: updated
