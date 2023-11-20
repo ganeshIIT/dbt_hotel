@@ -3,6 +3,11 @@ version: 2
 models:
   - name: hist_customers
     description: ""
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customerid
+            - from_date
     columns:
       - name: customer_hkey
         data_type: varchar
