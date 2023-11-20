@@ -10,7 +10,13 @@
     order_by_expr = none
 ) -%}
 
-{{ config(materialized='incremental') }}
+{{
+  config(
+    materialized = 'incremental',
+    on_schema_change='fail'
+    )
+}}
+
 
 WITH
 
@@ -44,7 +50,8 @@ load_from_input as (
 )
 {%- endif %}
 
-SELECT * FROM load_from_input
+SELECT *,{{ dbt_housekeeping() }} 
+FROM load_from_input
 {%- if order_by_expr %}
 ORDER BY {{order_by_expr}}
 {%- endif %}
