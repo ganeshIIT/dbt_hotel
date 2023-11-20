@@ -30,6 +30,13 @@ models:
       - name: customerid
         data_type: varchar
         description: ""
+        tests:
+          - relationships:
+              to: ref('stg_raw_customers')
+              field: customerid
+              config:
+                severity: warn
+
 
       - name: datebooked
         data_type: timestamp_ntz
