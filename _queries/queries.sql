@@ -62,32 +62,42 @@ where customer_data:CUSTOMERID in (6639);
 
 
 update hotel_prod.raw.reservations 
-set reservation_data = object_insert(reservation_data, 'STATUS' ,'cancelled', true), --active
-updated = current_timestamp() --'2020-01-01 00:00:00.000' 
+set reservation_data = object_insert(reservation_data, 'STATUS' ,'active', true), 
+updated = '2020-01-01 00:00:00.000' 
 --select *, reservation_data:RESERVATIONID from hotel_prod.raw.reservations 
 where reservation_data:RESERVATIONID 
-in (153208
-,178810
-,175053
-,135415
-,135706
-,175100
-,188489
-,171739
-,154002
-,153698
-,174100
-,192680
+in (
+ 173557
+,176482
 ,174254
-,173557
+,153502
+,135415
+,153698
+,192258
+,192680
+,175053
+,175100
+,178810
+,135706
 ,174707
 ,191634
-,127715
-,192258
-,176482
-,120578
+,154002
+,153208
+,171739
+,188489
 ,194295
-,153502);
+,120578
+,174100
+,127715
+,135851
+,128728
+,191289
+,134805
+,192173
+,193822
+,191126
+,193707
+);
 
 
 
@@ -98,16 +108,47 @@ set customer_data = object_insert(customer_data, 'CITY', 'New York', true), upda
 where customer_data:CUSTOMERID in (6639);
 
 update hotel_prod.raw.reservations 
-set reservation_data = object_insert(reservation_data, 'STATUS' ,'cancelled', true), --active
-updated = current_timestamp() --'2020-01-01 00:00:00.000' 
+set reservation_data = object_insert(reservation_data, 'STATUS' ,'cancelled', true), 
+updated = current_timestamp() 
 --select *, reservation_data:RESERVATIONID from hotel_prod.raw.reservations 
 where reservation_data:RESERVATIONID 
 in (
-    select reservationid
-    from hotel_dbt.gl.stg_raw_reservations
-    where status = 'active'
-    qualify stayfrom < lag(stayto, 1, stayfrom -1) over(partition by customerid order by stayfrom);
-)
+173557
+,176482
+,174254
+,153502
+,135415
+,153698
+,192258
+,192680
+,175053
+,175100
+,178810
+,135706
+,174707
+,191634
+,154002
+,153208
+,171739
+,188489
+,194295
+,120578
+,174100
+,127715
+,135851
+,128728
+,191289
+,134805
+,192173
+,193822
+,191126
+,193707
+);
+
+select r.reservationid
+from hotel_dbt.gl.stg_raw_reservations r
+where status = 'active'
+qualify stayfrom < lag(stayto, 1, stayfrom -1) over(partition by customerid order by stayfrom);
 
 
 
