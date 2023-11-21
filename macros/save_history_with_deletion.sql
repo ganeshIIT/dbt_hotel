@@ -29,7 +29,7 @@ load_from_input as (
 ),
 deleted_from_hist as (
     SELECT 
-        curr.* EXCLUDE (deleted, {{load_ts_column}})
+        curr.* EXCLUDE (deleted, {{load_ts_column}}, dbt_batch_id, dbt_batch_utc)
         , '{{ run_started_at }}' as {{load_ts_column}}
         , true as deleted
     FROM current_from_history curr 
@@ -52,6 +52,6 @@ changes_to_store as (
 )
 {%- endif %}
 
-SELECT * FROM changes_to_store
+SELECT *, {{ dbt_housekeeping() }} FROM changes_to_store
 
 {% endmacro %}
