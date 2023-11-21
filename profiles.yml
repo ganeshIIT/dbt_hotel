@@ -2,7 +2,7 @@ dbt_hotel:
   outputs:
     dev:
       account: etbcrxm-mu76076
-      database: analytics_dev
+      database: hotel_dbt
       password: "{{ env_var('DBT_PASSWORD') }}"
       role: sysadmin
       schema: gl
@@ -12,7 +12,7 @@ dbt_hotel:
       warehouse: compute_wh
     ci:
       account: etbcrxm-mu76076
-      database: analytics_dev
+      database: hotel_dbt
       password: "{{ env_var('DBT_PASSWORD') }}"
       role: sysadmin
       schema: ci # QA/UAT/Etc. this will create a ci schema to test
@@ -22,7 +22,7 @@ dbt_hotel:
       warehouse: compute_wh
     prod:
       account: etbcrxm-mu76076
-      database: analytics
+      database: hotel_prod
       password: "{{ env_var('DBT_PASSWORD') }}"
       role: sysadmin
       schema: dbt_prod
