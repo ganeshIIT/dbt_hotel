@@ -9,6 +9,7 @@ models:
             - customerid
             - from_date
             - reservationid
+            - reservation_hdiff
 
     columns:
       - name: customer_hkey
