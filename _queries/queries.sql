@@ -93,3 +93,5 @@ select status, count(*) from hotel_dbt.gl.hist_reservations group by all;
 
 
 -- delete from gl.hist_reservations where updated > '2020-01-01 00:00:00.000';
+
+select * from hotel_dbt.gl.obt_reservations where reservationid= 153208;

@@ -52,6 +52,7 @@ changes_to_store as (
 )
 {%- endif %}
 
-SELECT *, {{ dbt_housekeeping() }} FROM changes_to_store
+SELECT *, 
+{{ dbt_housekeeping() }} FROM changes_to_store
 
 {% endmacro %}
