@@ -1,4 +1,4 @@
-dbt_training:
+dbt_hotel:
   outputs:
     dev:
       account: etbcrxm-mu76076
