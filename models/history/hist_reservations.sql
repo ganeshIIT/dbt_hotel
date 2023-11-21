@@ -1,3 +1,12 @@
+{{  save_history_with_deletion(
+        input_rel = ref('stg_raw_reservations'),
+        key_column = 'reservation_hkey',
+        diff_column = 'reservation_hdiff',
+        load_ts_column = 'updated'
+) }}
+
+
+{# 
 {{  save_history(
         input_rel = ref('stg_raw_reservations'),
         key_column = 'reservation_hkey',
@@ -5,7 +14,7 @@
         load_ts_column = 'updated',
 
         high_watermark_column = 'updated'
-) }}
+) }} #}
 
 
 {# {{
