@@ -102,28 +102,12 @@ set reservation_data = object_insert(reservation_data, 'STATUS' ,'cancelled', tr
 updated = current_timestamp() --'2020-01-01 00:00:00.000' 
 --select *, reservation_data:RESERVATIONID from hotel_prod.raw.reservations 
 where reservation_data:RESERVATIONID 
-in (153208
-,178810
-,175053
-,135415
-,135706
-,175100
-,188489
-,171739
-,154002
-,153698
-,174100
-,192680
-,174254
-,173557
-,174707
-,191634
-,127715
-,192258
-,176482
-,120578
-,194295
-,153502);
+in (
+    select reservationid
+    from hotel_dbt.gl.stg_raw_reservations
+    where status = 'active'
+    qualify stayfrom < lag(stayto, 1, stayfrom -1) over(partition by customerid order by stayfrom);
+)
 
 
 
@@ -139,7 +123,7 @@ select status, count(*) from hotel_dbt.gl.hist_reservations group by all;
 select * from hotel_dbt.gl.obt_reservations where reservationid= 153208;
 
 select customerid, reservationid, stayfrom, stayto
-from hotel_dbt.ci.stg_raw_reservations
+from hotel_dbt.gl.stg_raw_reservations
 where status = 'active'
 qualify stayfrom < lag(stayto, 1, stayfrom -1) over(partition by customerid order by stayfrom);
 
