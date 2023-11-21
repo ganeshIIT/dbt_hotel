@@ -59,8 +59,8 @@ select * from hotel_dbt.gl.hist_customers where customerid = 6639;
 select * from hotel_dbt.gl.obt_reservations where customerid = 6639;
 
 update hotel_prod.raw.reservations 
-set reservation_data = object_insert(reservation_data, 'STATUS', 'cancelled', true), --active
-updated = current_timestamp() --'2020-01-01 00:00:00.000'
+set reservation_data = object_insert(reservation_data, 'cancelled', true), --active
+updated =  current_timestamp() --'2020-01-01 00:00:00.000' 
 --select *, reservation_data:RESERVATIONID from hotel_prod.raw.reservations 
 where reservation_data:RESERVATIONID 
 in (153208
@@ -95,3 +95,13 @@ select status, count(*) from hotel_dbt.gl.hist_reservations group by all;
 -- delete from gl.hist_reservations where updated > '2020-01-01 00:00:00.000';
 
 select * from hotel_dbt.gl.obt_reservations where reservationid= 153208;
+
+select customerid, reservationid, stayfrom, stayto
+from hotel_dbt.gl.stg_raw_reservations
+where status = 'active'
+qualify stayfrom < lag(stayto, 1, stayfrom -1) over(partition by customerid order by stayfrom);
+
+select customerid, reservationid, stayfrom, stayto
+from hotel_dbt.gl.hist_reservations
+where status = 'active'
+qualify stayfrom < lag(stayto, 1, stayfrom -1) over(partition by customerid order by stayfrom);
