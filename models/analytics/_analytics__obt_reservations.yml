@@ -3,18 +3,27 @@ version: 2
 models:
   - name: obt_reservations
     description: ""
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customerid
+            - from_date
+            - reservationid
+
     columns:
       - name: customer_hkey
         data_type: varchar
         description: ""
 
       - name: customer_hdiff
-        data_type: varchar
+        data_type: varchardbt b
         description: ""
 
       - name: customerid
         data_type: varchar
         description: ""
+        tests:
+          - not_null
 
       - name: firstname
         data_type: varchar
@@ -67,6 +76,8 @@ models:
       - name: reservationid
         data_type: varchar
         description: ""
+        tests:
+          - not_null
 
       - name: datebooked
         data_type: timestamp_ntz
