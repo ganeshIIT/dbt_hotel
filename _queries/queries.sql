@@ -19,3 +19,6 @@ select max(from_date) from hotel_dbt.gl.hist_customers;
 
 select * from hotel_dbt.snapshots.snapshot_customers;
 
+
+
+
