@@ -81,8 +81,7 @@ _All transformed data models are deployed to the `ANALYTICS_###` database._
       - [Click here](https://docs.getdbt.com/dbt-cli/install/pip#using-virtual-environments) to learn more about using virtual environments w/ dbt, including ways to alias this acticate command.
 
 ### Contributors
-- John Doe (Developer)
-- Jane Doe (Developer)
+- Ganesh L
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
