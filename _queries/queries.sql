@@ -153,7 +153,7 @@ qualify stayfrom < lag(stayto, 1, stayfrom -1) over(partition by customerid orde
 
 
 
-select distinct(dbt_batch_utc) from hotel_dbt.gl.hist_reservations;
+select dbt_batch_utc, count(*) from hotel_dbt.gl.hist_reservations group by all;
 select * from hotel_dbt.gl.hist_reservations where reservationid= 153208;
 
 select status, count(*) from hotel_dbt.gl.hist_reservations group by all;
