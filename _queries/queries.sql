@@ -21,7 +21,7 @@ select max(from_date) from hotel_dbt.gl.hist_customers;
 select * from hotel_dbt.snapshots.snapshot_customers;
 
 drop schema hotel_dbt.snapshots;
-drop schema hotel_prod.snapshots
+drop schema hotel_prod.snapshots;
 
 
 select customerid, count(*) from hotel_dbt.gl.hist_reservations group by all order by 2 desc;
