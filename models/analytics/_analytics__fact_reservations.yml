@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fact_reservations
+    description: ""
+    columns:
+      - name: reservation_hkey
+        data_type: varchar
+        description: ""
+
+      - name: reservation_hdiff
+        data_type: varchar
+        description: ""
+
+      - name: reservationid
+        data_type: varchar
+        description: ""
+
+      - name: customerid
+        data_type: varchar
+        description: ""
+
+      - name: datebooked
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: status
+        data_type: varchar
+        description: ""
+
+      - name: asat_date
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: nightscharged
+        data_type: number
+        description: ""
+
+      - name: is_reverse
+        data_type: boolean
+        description: ""
+
+      - name: dbt_batch_id
+        data_type: varchar
+        description: ""
+
+      - name: dbt_batch_utc
+        data_type: timestamp_ntz
+        description: ""
+
+
+
+
