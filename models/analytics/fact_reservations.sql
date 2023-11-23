@@ -13,25 +13,12 @@ reverse_facts AS (
         datebooked,
         status,
         updated,
-        LAG(status) over(
-            PARTITION BY customerid,
-            reservationid
-            ORDER BY
-                updated
-        ) AS previous_status,
-        LAG(nightscharged) over(
-            PARTITION BY customerid,
-            reservationid
-            ORDER BY
-                updated
-        ) AS previous_nights_charged,
+        LAG(status) over(PARTITION BY customerid, reservationid ORDER BY updated) AS previous_status,
+        LAG(nightscharged) over(PARTITION BY customerid, reservationid ORDER BY updated) AS previous_nights_charged,
         CASE
-            WHEN previous_status = 'active'
-            AND status = 'cancelled' THEN nightscharged * -2
-            WHEN previous_status = 'cancelled'
-            AND status = 'cancelled' THEN nightscharged * -1
-            WHEN previous_status = 'active'
-            AND status = 'active' THEN previous_nights_charged - nightscharged
+            WHEN previous_status = 'active' AND status = 'cancelled' THEN nightscharged * -2
+            WHEN previous_status = 'cancelled' AND status = 'cancelled' THEN nightscharged * -1
+            WHEN previous_status = 'active' AND status = 'active' THEN previous_nights_charged - nightscharged
             ELSE NULL
         END AS rb_nights_charged,
         TRUE AS is_reverse
