@@ -61,3 +61,6 @@ snapshots:
 
 # on-run-end:
 #   - "{{ dbt_artifacts.upload_results(results) }}"
+
+on-run-end: 
+  - "{{ log_dbt_results(results) }}"
