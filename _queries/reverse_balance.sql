@@ -50,3 +50,5 @@ WHERE asat_date< '2023-11-21 03:15:54.569'
 and customerid = 2895;
 -- AND is_reverse = false;
 
+select * from fact_reservations where customerid = 2895
+
